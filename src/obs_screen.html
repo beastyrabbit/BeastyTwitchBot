@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolling Text with HTMX</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: black;
+            color: black;
+        }
+
+        .scrolling-text {
+            position: absolute;
+            white-space: nowrap;
+            color: white;
+            border: 1px solid black;
+            font-size: 48px;
+            animation: scrollText 10s linear infinite;
+        }
+
+        @keyframes scrollText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="text" class="scrolling-text"
+     hx-get="/update-text"
+     hx-trigger="every 2s"
+     hx-target="#text"
+     hx-swap="innerHTML">
+    Be Right Back...
+</div>
+</body>
+</html>

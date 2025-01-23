@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        async function fetchUsers() {
+            const response = await fetch('/users');  // Relative Path
+            const users = await response.json();
+            const userList = document.getElementById('user-list');
+            userList.innerHTML = '';
+            users.forEach(user => {
+                userList.innerHTML += `
+                    <li>
+                        <span>${user}</span>
+                        <button onclick="deleteUser('${user}')">Delete</button>
+                        <a href="/user/${user}/edit">Edit</a>
+                    </li>`;
+            });
+        }
+
+        // Delete a user
+        async function deleteUser(username) {
+            if (!confirm(`Are you sure you want to delete user "${username}"?`)) {
+                return;
+            }
+            const response = await fetch(`/user/${username}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                alert(`User "${username}" deleted successfully.`);
+                fetchUsers(); // Refresh the list
+            } else {
+                alert(`Failed to delete user "${username}".`);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchUsers);
+    </script>
+
+</head>
+<body>
+<h1>User Management</h1>
+<ul id="user-list">
+</ul>
+</body>
+</html>

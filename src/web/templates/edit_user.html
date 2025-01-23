@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User - {{ username }}</title>
+    <style>
+        /* General Styles */
+        body {
+            background-color: #000; /* Black Background */
+            color: #fff; /* White Text */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            color: #4CAF50; /* Light Green Links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        async function loadUserData() {
+            const response = await fetch(`/user/{{ username }}/edit`);
+            const data = await response.json();
+            for (const key in data) {
+                if (document.getElementById(key)) {
+                    document.getElementById(key).value = data[key];
+                }
+            }
+        }
+
+        async function saveUserData() {
+            const formData = {};
+            document.querySelectorAll('.user-input').forEach(input => {
+                formData[input.id] = input.value;
+            });
+            await fetch(`/user/{{ username }}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(formData)
+            });
+            alert('User data saved!');
+        }
+
+        document.addEventListener('DOMContentLoaded', loadUserData);
+    </script>
+
+
+</head>
+<body>
+<h1>Edit User: {{ username }}</h1>
+<form onsubmit="event.preventDefault(); saveUserData();">
+    <label>Clean Points Collected: <input id="clean_points_collected" class="user-input" type="number"></label><br>
+    <label>Command Count: <input id="command_count" class="user-input" type="number"></label><br>
+    <label>Timestamp Last Command: <input id="timestamp_last_command" class="user-input" type="number"></label><br>
+    <label>Gambling Results: <input id="gambling_results" class="user-input" type="number"></label><br>
+    <label>Gambling Input: <input id="gambling_input" class="user-input" type="number"></label><br>
+    <label>Gambling Wins: <input id="gambling_wins" class="user-input" type="number"></label><br>
+    <label>Gambling Losses: <input id="gambling_losses" class="user-input" type="number"></label><br>
+    <label>Fight Requested By: <input id="fight_requested_by" class="user-input" type="text"></label><br>
+    <label>Fights Won: <input id="fights_won" class="user-input" type="number"></label><br>
+    <label>Fights Lost: <input id="fights_lost" class="user-input" type="number"></label><br>
+    <label>Points Invested: <input id="points_invested" class="user-input" type="number"></label><br>
+    <label>Timestamp Investment: <input id="timestamp_investment" class="user-input" type="number"></label><br>
+    <label>Points Collected from Investment: <input id="points_collected_from_investment" class="user-input"
+                                                    type="number"></label><br>
+    <button type="submit">Save Changes</button>
+</form>
+<a href="/">Back to User List</a>
+</body>
+</html>
