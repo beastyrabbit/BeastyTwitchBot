@@ -1,8 +1,8 @@
 from typing import Dict
 
-from config.global_methods import setup_logger
-from config.base_values import redis_client
-from objects.user import User
+from .global_methods import setup_logger
+from .base_values import redis_client
+from .user import User
 
 logger = setup_logger(__name__)
 
@@ -65,4 +65,4 @@ class ObjectManager:
 
 
 # Create a global manager instance
-object_manager = ObjectManager()
+#object_manager = ObjectManager()

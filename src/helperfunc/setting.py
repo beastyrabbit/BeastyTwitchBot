@@ -1,8 +1,8 @@
 from datetime import datetime, timedelta
 from enum import Enum
 
-from config.base_values import redis_client, setup_logger
-from objects.user import User
+from .base_values import redis_client, setup_logger
+from .user import User
 
 _logger = setup_logger(__name__)
 

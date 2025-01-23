@@ -4,9 +4,9 @@ from datetime import datetime
 
 import numpy as np
 
-from config.base_values import client, redis_client, setup_logger
-from objects.setting import OfficialCommands, SettingsManager
-from objects.user import User
+from .base_values import client, redis_client, setup_logger
+from .setting import OfficialCommands, SettingsManager
+from .user import User
 
 _logger = setup_logger(__name__)
 

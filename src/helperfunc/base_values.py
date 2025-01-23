@@ -6,7 +6,7 @@ import logging
 from datetime import datetime
 
 # Get the absolute path to the settings file
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
 TOKEN_FILE = os.path.join(BASE_DIR, 'twitch_token.json')
 CHANNEL_NAME = 'Beastyrabbit'
@@ -19,6 +19,7 @@ redis_client = redis.StrictRedis(host='localhost', port=6379, decode_responses=T
 # Function to load the token from a JSON file
 def load_token():
 	"""Load token from file if it exists."""
+	_logger.debug(f'Loading token from {TOKEN_FILE}')
 	if os.path.exists(TOKEN_FILE):
 		with open(TOKEN_FILE) as file:
 			return json.load(file)
