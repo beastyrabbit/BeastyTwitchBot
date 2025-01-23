@@ -10,6 +10,7 @@ import obsws_python as obs
 
 _logger = setup_logger(__name__)
 
+#TODO: DO STUFF
 
 class Bot(commands.Bot):
 	def __init__(self):

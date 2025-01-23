@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="45c8c5c4-d7d9-4e6e-ab7f-13c78a1f31ec" name="twtichbot" url="http://localhost">
+        <fileTransfer rootFolder="/opt/twitchbot" accessType="SFTP" host="192.168.50.186" port="22" sshConfigId="4cdb0aa1-07e0-4a3b-a1c4-3bf0908fa3aa" sshConfig="remoteconnect@192.168.50.186:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
