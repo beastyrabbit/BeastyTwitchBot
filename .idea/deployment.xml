@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="twtichbot" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" autoUpload="Always" serverName="twtichbot" uploadOnCheckin="45c8c5c4-d7d9-4e6e-ab7f-13c78a1f31ec" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
       <paths name="twtichbot">
         <serverdata>
@@ -10,6 +10,7 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="twtichbot" />
     <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

@@ -3,14 +3,12 @@ from typing import TYPE_CHECKING
 
 from twitchio.ext import commands
 
-from config.global_methods import global_settings_Manager
-from config.base_values import CHANNEL_NAME, get_valid_token, redis_client, setup_logger
-from objects.setting import OfficialCommands
-from objects.user import User
-from objects.object_manager import ObjectManager
+from src.helperfunc.global_methods import global_settings_Manager
+from src.helperfunc.base_values import CHANNEL_NAME, get_valid_token, redis_client, setup_logger
+from helperfunc.setting import OfficialCommands
 
 if TYPE_CHECKING:
-	from objects.object_manager import UserManager, ObjectManager
+	from helperfunc.object_manager import UserManager, ObjectManager
 
 _logger = setup_logger(__name__)
 

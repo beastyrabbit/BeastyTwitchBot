@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 from st_aggrid import AgGrid, GridOptionsBuilder
 
-from objects.object_manager import object_manager
+from helperfunc.object_manager import object_manager
 
 user_manager = object_manager.user_manager
 # Streamlit Config
