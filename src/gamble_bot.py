@@ -1,16 +1,10 @@
 import random
-from typing import TYPE_CHECKING
-
 from twitchio.ext import commands
 
-from config.global_methods import global_settings_Manager
-from config.base_values import CHANNEL_NAME, get_valid_token, redis_client, setup_logger
-from objects.setting import OfficialCommands
-from objects.user import User
-from objects.object_manager import ObjectManager
-
-if TYPE_CHECKING:
-	from objects.object_manager import UserManager, ObjectManager
+from src.helperfunc.global_methods import global_settings_Manager
+from src.helperfunc.base_values import CHANNEL_NAME, get_valid_token, redis_client, setup_logger
+from src.helperfunc.setting import OfficialCommands
+from src.helperfunc.object_manager import UserManager, ObjectManager
 
 _logger = setup_logger(__name__)
 
@@ -21,9 +15,9 @@ class Bot(commands.Bot):
 		# prefix can be a callable, which returns a list of strings or a string...
 		# initial_channels can also be a callable which returns a list of strings...
 		access_token = get_valid_token()
-		self.object_manager = ObjectManager()
+		self.object_manager:ObjectManager = ObjectManager()
 		self.user_manager: UserManager = self.object_manager.user_manager
-
+		print(access_token)
 		self.number_of_send_messages = 0
 		super().__init__(token=access_token, prefix='!', initial_channels=[CHANNEL_NAME])
 

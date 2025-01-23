@@ -2,9 +2,9 @@ from datetime import datetime
 
 from twitchio.ext import commands
 import os, sys
-from config.global_methods import calculate_interest, do_the_cleaning_command, generate_rnd_amount_to_steal
-from config.base_values import CHANNEL_NAME, setup_logger, get_valid_token
-from objects.object_manager import ObjectManager, UserManager
+from src.helperfunc.global_methods import calculate_interest, do_the_cleaning_command, generate_rnd_amount_to_steal
+from src.helperfunc.base_values import CHANNEL_NAME, setup_logger, get_valid_token
+from src.helperfunc.object_manager import ObjectManager, UserManager
 
 _logger = setup_logger(__name__)
 

@@ -1,4 +1,4 @@
-from config.base_values import setup_logger, redis_client
+from .base_values import setup_logger, redis_client
 
 _logger = setup_logger(__name__)
 
