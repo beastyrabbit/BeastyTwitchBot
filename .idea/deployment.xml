@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="twtichbot" uploadOnCheckin="45c8c5c4-d7d9-4e6e-ab7f-13c78a1f31ec" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" autoUpload="Always" uploadOnCheckin="6ce4d3ba-f666-4e94-bba4-cf584af1b10a" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="twtichbot">
+      <paths name="remoteconnect@192.168.50.186:22 password">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
@@ -10,7 +10,7 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myUploadOnCheckinName" value="twtichbot" />
+    <option name="myUploadOnCheckinName" value="remoteconnect@192.168.50.186:22 password" />
     <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
