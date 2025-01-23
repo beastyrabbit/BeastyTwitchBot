@@ -1,4 +1,3 @@
-import os
 import random
 from datetime import datetime
 
@@ -92,7 +91,7 @@ def let_ai_narrate_the_fight(fight_sequence):
 	return completion.choices[0].message.content.strip()
 
 
-def get_text_to_spech(text: str, output_name: str = 'output', voice: str = 'onyx', hd: bool = False):
+def get_text_to_spech(text: str, output_name: str = 'output', voice: str = 'onyx', hd: bool = False) -> bytes:
 	# Text-to-Speech
 	if hd:
 		modeltype = 'tts-1-hd'
@@ -104,13 +103,9 @@ def get_text_to_spech(text: str, output_name: str = 'output', voice: str = 'onyx
 		voice=voice,  # Choose from available voices: alloy, echo, fable, onyx, shimmer
 		input=text,
 	)
-	# Save the audio output into folder AUDIO_PATH
-	AUDIO_PATH = f'/data/twitchbot/audio/{output_name}_audio.mp3'
-	# check filde exists and delete it
-	if os.path.exists(AUDIO_PATH):
-		os.remove(AUDIO_PATH)
-
-	response.stream_to_file(AUDIO_PATH)
+	# Return the audio as bytes for playback
+	audio_data = response.stream_bytes()
+	return audio_data
 
 
 def translate_text(text):

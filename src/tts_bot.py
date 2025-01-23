@@ -3,8 +3,10 @@ import os
 from twitchio.ext import commands
 
 from src.helperfunc.base_values import CHANNEL_NAME, setup_logger, get_valid_token
-from helperfunc.object_manager import UserManager, ObjectManager
+from src.helperfunc.object_manager import UserManager, ObjectManager
 import obsws_python as obs
+
+from src.helperfunc.global_methods import get_text_to_spech
 
 _logger = setup_logger(__name__)
 
@@ -67,12 +69,7 @@ class Bot(commands.Bot):
 
 	@commands.command(name='tts')
     async def tts_command(self, ctx: commands.Context, text: str):
-        _logger.info(f'User {ctx.author.name} is calling the tts command')
-        scene_name = "Scene TTS"
-        self.cl.set_current_program_scene(scene_name)
-        _logger.info(f"Scene changed to: {scene_name}")
-        self.cl.set_text(scene_name, text)
-        _logger.info(f"Text set to: {text}")
+        get_text_to_spech
 
 
 

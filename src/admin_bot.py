@@ -3,7 +3,7 @@ from twitchio.ext import commands, routines
 from src.helperfunc.base_values import redis_client
 from src.helperfunc.global_methods import get_discussion_topic_for_technology, translate_text
 from src.helperfunc.base_values import CHANNEL_NAME, setup_logger, get_valid_token
-from helperfunc.object_manager import UserManager, ObjectManager
+from src.helperfunc.object_manager import UserManager, ObjectManager
 
 _logger = setup_logger(__name__)
 

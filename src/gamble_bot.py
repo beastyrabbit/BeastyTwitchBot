@@ -1,10 +1,10 @@
 import random
 from twitchio.ext import commands
 
-from helperfunc.global_methods import global_settings_Manager
-from helperfunc.base_values import CHANNEL_NAME, get_valid_token, redis_client, setup_logger
-from helperfunc.setting import OfficialCommands
-from helperfunc.object_manager import UserManager, ObjectManager
+from src.helperfunc.global_methods import global_settings_Manager
+from src.helperfunc.base_values import CHANNEL_NAME, get_valid_token, redis_client, setup_logger
+from src.helperfunc.setting import OfficialCommands
+from src.helperfunc.object_manager import UserManager, ObjectManager
 
 _logger = setup_logger(__name__)
 

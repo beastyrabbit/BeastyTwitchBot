@@ -8,10 +8,8 @@ from twitchio.ext import commands
 
 from src.helperfunc.global_methods import inc_global_chat_counter, let_ai_narrate_the_fight
 from src.helperfunc.base_values import CHANNEL_NAME, get_valid_token, setup_logger
-from helperfunc.object_manager import ObjectManager
-
-if TYPE_CHECKING:
-	from helperfunc.object_manager import UserManager
+from src.helperfunc.object_manager import ObjectManager
+from src.helperfunc.object_manager import UserManager
 
 _logger = setup_logger(__name__)
 
