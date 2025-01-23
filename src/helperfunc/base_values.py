@@ -6,7 +6,7 @@ import logging
 from datetime import datetime
 
 # Get the absolute path to the settings file
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 TOKEN_FILE = os.path.join(BASE_DIR, 'twitch_token.json')
 CHANNEL_NAME = 'Beastyrabbit'

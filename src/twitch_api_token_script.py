@@ -40,15 +40,17 @@ def exchange_code_for_token(auth_code):
 def save_token(token_data):
 	"""Save token to file."""
 	token_data['expires_at'] = (datetime.now() + timedelta(seconds=token_data['expires_in'])).isoformat()
-	with open(TOKEN_FILE, 'w') as file:
+	file_path = os.path.join(os.path.dirname(__file__), TOKEN_FILE)
+	with open(file_path, 'w') as file:
 		json.dump(token_data, file)
 
 
 # Function to load the token from a JSON file
 def load_token():
 	"""Load token from file if it exists."""
-	if os.path.exists(TOKEN_FILE):
-		with open(TOKEN_FILE) as file:
+	file_path = os.path.join(os.path.dirname(__file__), TOKEN_FILE)
+	if os.path.exists(file_path):
+		with open(file_path) as file:
 			return json.load(file)
 	return None
 
