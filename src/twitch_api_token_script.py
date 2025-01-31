@@ -3,7 +3,7 @@ import os
 from datetime import datetime, timedelta
 
 import requests
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from werkzeug.serving import run_simple
 
 TOKEN_FILE = 'twitch_token.json'
@@ -110,6 +110,10 @@ def callback():
 	# Trigger server shutdown
 	shutdown_server()
 	return 'Authorization successful! You can close this page.'
+
+@app.route('/health', methods=['GET'])
+def health():
+	return jsonify({"status": "ok"}), 200
 
 
 # Function to start the Flask server
