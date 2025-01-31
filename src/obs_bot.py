@@ -2,8 +2,8 @@ import os
 
 from twitchio.ext import commands
 
-from src.helperfunc.base_values import CHANNEL_NAME, setup_logger, get_valid_token
-from src.helperfunc.object_manager import UserManager, ObjectManager
+from helperfunc.base_values import CHANNEL_NAME, setup_logger, get_valid_token
+from helperfunc.object_manager import UserManager, ObjectManager
 import obsws_python as obs
 
 _logger = setup_logger(__name__)

@@ -1,9 +1,9 @@
 import subprocess
 from twitchio.ext import commands
 
-from src.helperfunc.base_values import CHANNEL_NAME, setup_logger, get_valid_token
-from src.helperfunc.object_manager import UserManager, ObjectManager
-from src.helperfunc.setting import BotList
+from helperfunc.base_values import CHANNEL_NAME, setup_logger, get_valid_token
+from helperfunc.object_manager import UserManager, ObjectManager
+from helperfunc.setting import BotList
 
 # TODO: Channelpoint integration
 

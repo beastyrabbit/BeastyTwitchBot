@@ -6,9 +6,9 @@ import pyaudio
 from pydub import AudioSegment
 from twitchio.ext import commands
 
-from src.helperfunc.base_values import CHANNEL_NAME, setup_logger, get_valid_token
-from src.helperfunc.global_methods import get_text_to_spech
-from src.helperfunc.object_manager import UserManager, ObjectManager
+from helperfunc.base_values import CHANNEL_NAME, setup_logger, get_valid_token
+from helperfunc.global_methods import get_text_to_spech
+from helperfunc.object_manager import UserManager, ObjectManager
 
 _logger = setup_logger(__name__)
 
